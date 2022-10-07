@@ -1,0 +1,8 @@
+java -jar ~/jenkins-cli.jar \
+    -s http://oldserver:8080 \
+    -auth @/.jenkins-cli \
+    get-job "job name" \
+| java -jar ~/jenkins-cli_newserver.jar \
+    -s http://newserver:8080 \
+    -auth @/.jenkins-cli_newserver \
+    create-job "new or existing job name
